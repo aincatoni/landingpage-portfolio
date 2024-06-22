@@ -24,44 +24,61 @@
 </head>
 <body>
   <header>
-    <a href="#" class="logo"><img src="./assets/img/aincatoni_iso.png" alt="">ainco.dev</a>
+    <a href="#" class="logo"><img src="./assets/img/aincatoni_iso.png" alt="">aincorca.dev</a>
 
       <input type="checkbox" name="checkbox0" id="menu-toggle">
       <label for="menu-toggle" class="menu-icon-action">
         <div class='bx bx-menu' id="menu-icon"></div>
       </label>
-    <ul class="navlist">
-      <li><a href="#">Home</a></li>
-      <li><a href="#">Sobre mi</a></li>
-      <li><a href="#">Portafolio</a></li>
-      <li><a href="#">Contacto</a></li>
-    </ul>
+    <div class="navlist">
+      <ul>
+        <li class="link-animation"><a href="#">Home</a></li>
+        <li class="link-animation"><a href="#about">Sobre mi</a></li>
+        <li class="link-animation"><a href="#">Portafolio</a></li>
+        <li class="link-animation"><a href="#">Contacto</a></li>
+      </ul>
+    </div>
   </header>
 
-  <section class="hero">
-    <div class="hero-text">
-      <h5>Front end Developer</h5>
-      <h1>Ain Cortés Catoni</h1>
-      <p>Me encanta desarrollar sitios funcionales <br>Y solucionar problemas con un <strong>alto enfoque en los <i>estilos</i></strong></p>
-      <a href="#"><i class="ri-profile-fill"></i>CV</a>
-      <a href="#" class="trabajos"><i class="ri-computer-fill"></i>Mis Trabajos</a>
-    </div>
-    <div class="hero-img">
-      <img src="./assets/img/avatar.png" alt="foto ain">
-    </div>
+  <main>
+    <section class="hero">
+      <div class="hero-text">
+        <h5>Front end Developer</h5>
+        <h1>Ain Cortés Catoni</h1>
+        <p>Me encanta desarrollar sitios funcionales <br>Y solucionar problemas con un <strong>alto enfoque en los <i>estilos</i></strong></p>
+        <div class="pinned-links">
+          <div class="link-animation"><a href="#" class="cv"><i class="ri-profile-fill"></i>CV</a></div>
+          <div class="link-animation"><a href="#" class="trabajos"><i class="ri-computer-fill"></i>Mis Trabajos</a></div>
+        </div>
+      </div>
+      <div class="hero-img">
+        <img src="./assets/img/avatar.png" alt="foto ain">
+      </div>
+    </section>
 
-    <div class="social">
-      <a href="#"><i class="ri-linkedin-box-fill"></i></a>
-      <a href="#"><i class="ri-github-fill"></i></a>
-      <a href="#"><i class="ri-youtube-fill"></i></a>
-    </div>
-  </section>
+    <section class="about" id="about">
+      <div class="about-text">
+        <h2 class="">Sobre mi</h2>
+        <p>💡 Estudié Diseño Gráfico y ejercí por poco más de una década, siempre me gustó mucho la web así que fue natural para mi transitar el camino hacia el desarrollo web. Hoy en día me dedico al Desarrollo Front de sitios web siempre con una mirada desde el <strong>Diseño</strong> y la <strong>Usabilidad</strong></p>
+      </div>
+    </section>
 
-  
+  </main>
+
+  <div class="social">
+    <a href="#"><i class="ri-linkedin-box-fill"></i></a>
+    <a href="#"><i class="ri-github-fill"></i></a>
+    <a href="#"><i class="ri-youtube-fill"></i></a>
+  </div>
 
   <div class="scroll-down">
     <a href="#"><i class="ri-arrow-down-circle-fill"></i></a>
   </div>
+  
+  <footer>
+    <p>aincatoni.com es un sitio web hecho con ❤️ por Ain Cortés Catoni</p>
+  </footer>
+
   
 </body>
 </html>

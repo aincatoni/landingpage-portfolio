@@ -1,3 +1,4 @@
+@import url(./assets/css/fonts.css);
 *{
   padding: 0;
   margin: 0;
@@ -8,9 +9,16 @@
   color: white;
 }
 
-body {
-  background-color: black; /*TODO: borrar cuando tengamos el fondo final*/
+html {
+  background-color: #0b0026;
+  scroll-behavior: smooth;
+  /* scroll-snap-type: proximity; */
 }
+
+body {
+  background: linear-gradient(243.59deg, #6535c3 0%, #2d0083 25%, #0b0026 75%);
+}
+
 
 header {
   position: fixed;
@@ -37,16 +45,14 @@ header {
 }
 
 .navlist {
-  display: flex;
   position: absolute;
   right: -1000px;
   background-color: #0b0026f4;
-  flex-direction: column;
-  width: 100vw;
-  height: 400px;
+  width: 84vw;
+  height: 100vh;
   padding: 20px 50px;
   align-items: end;
-  top: 100px;
+  top: 0;
   transition: right .5s ease-out;
   backdrop-filter: blur(200px);
 }
@@ -59,7 +65,7 @@ header {
   font-size: 40px;
 }
 
-#menu-toggle:checked + .menu-icon-action + ul {
+#menu-toggle:checked + .menu-icon-action + .navlist {
   right: 0;
 
 }
@@ -67,12 +73,6 @@ header {
 .navlist a {
   font-size: 15px;
   font-weight: 600;
-  border-bottom: 2px solid transparent;
-  transition: all .5s ease;
-}
-
-.navlist a:hover {
-  border-bottom: 2px solid white;
 }
 
 #menu-icon {
@@ -95,11 +95,44 @@ header {
   display: block;
 }
 
+.link-animation a {
+  position: relative; 
+  text-decoration: none; 
+}
+
+.link-animation a:after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  border-bottom: 2px solid #ffffff;
+  -moz-transform: scale(0, 1);
+  -ms-transform: scale(0, 1);
+  -webkit-transform: scale(0, 1);
+  transform: scale(0, 1);
+  -moz-transform-origin: 0 0;
+  -ms-transform-origin: 0 0;
+  -webkit-transform-origin: 0 0;
+  transform-origin: 0 0;
+  transition: all .7s linear;
+  margin-top: 5px;
+}
+.link-animation a:hover:after {
+  -moz-transform: scale(1, 1);
+  -ms-transform: scale(1, 1);
+  -webkit-transform: scale(1, 1);
+  transform: scale(1, 1);
+}
+
+main {
+  position: relative;
+}
+
 .hero {
   height: 100%;
   width: 100%;
   min-height: 100vh;
-  background: linear-gradient(243.59deg, #6535c3 0%, #2d0083 25%, #0b0026 75%);
   position: relative;
   display: grid;
   grid-template-columns: 1fr;
@@ -137,30 +170,7 @@ header {
   position: relative;
   font-size: 20px;
 }
-.hero-text a:after {
-  content: "";
-  position: absolute;
-  top: 100%;
-  left: 0;
-  width: 100%;
-  border-bottom: 2px solid #ffffff;
-  -moz-transform: scale(0, 1);
-  -ms-transform: scale(0, 1);
-  -webkit-transform: scale(0, 1);
-  transform: scale(0, 1);
-  -moz-transform-origin: 0 0;
-  -ms-transform-origin: 0 0;
-  -webkit-transform-origin: 0 0;
-  transform-origin: 0 0;
-  transition: all .7s linear;
-  margin-top: 5px;
-}
-.hero-text a:hover:after {
-  -moz-transform: scale(1, 1);
-  -ms-transform: scale(1, 1);
-  -webkit-transform: scale(1, 1);
-  transform: scale(1, 1);
-}
+
 
 .hero-img {
   text-align: center;
@@ -175,15 +185,29 @@ header {
   margin-right: 3px;
 }
 
-/* .social {
-  position: absolute;
-  left: 50vw;
-  bottom: 0;
-  transform: translateY(-50%);
-  transform: translateX(-1%);
+.pinned-links{
   display: flex;
-  flex-direction: row;
-} */
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+.about {
+  grid-template-columns: 1fr;
+  padding: 20px 50px;
+}
+
+
+.social {
+width: 100%;
+justify-content: center;
+ display: flex;
+ flex-direction: row;
+ margin: 0 auto;
+}
+
+.social a {
+  margin-right: 10px;
+}
 
 .social i {
   display: block;
@@ -197,18 +221,22 @@ header {
 }
 
 .scroll-down {
-  position: absolute;
-  bottom: 6%;
-  right: 3%;
+  display: none;
 }
 
-.scroll-down i {
-  display: block;
-  font-size: 50px;
-  border-radius: 30px;
+footer {
+  width: 100%;
+  margin: 0 auto;
+  background-color: #0b00262b;
+  text-align: center;
+  } 
+  footer p {
+    padding: 10px 0;
+    font-size: 10px;
+    font-weight: 400;
 }
 
-
+/*Desktop*/
 
 @media (min-width:992px) {
   header {
@@ -235,20 +263,31 @@ header {
   }
   
   .navlist {
-    display: flex;
-  }
-  
-  .navlist a {
+    background-color: unset;
+    position: unset;
+    top: unset;
+    right: unset;
+    width: unset;
+    height: unset;
+    padding: 0;
+    }
+
+    .navlist ul {
+      display: flex;
+      align-items: center;
+    }
+    
+    .navlist ul li  {
+      display: inline-block;
+      margin-bottom: 0;
+    }
+    .navlist li a {
     margin-left: 60px;
     font-size: 15px;
     font-weight: 600;
-    border-bottom: 2px solid transparent;
-    transition: all .5s ease;
+    
   }
   
-  .navlist a:hover {
-    border-bottom: 2px solid white;
-  }
   
   #menu-icon {
     display: none;
@@ -270,13 +309,13 @@ header {
     height: 100%;
     width: 100%;
     min-height: 100vh;
-    background: linear-gradient(243.59deg, #6535c3 0%, #2d0083 25%, #0b0026 75%);
     position: relative;
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     align-items: center;
     gap: 1rem;
     padding: 0;
+    padding-top: 100px;
   }
   
   section {
@@ -311,30 +350,6 @@ header {
     position: relative;
     font-size: 20px;
   }
-  .hero-text a:after {
-    content: "";
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    border-bottom: 2px solid #ffffff;
-    -moz-transform: scale(0, 1);
-    -ms-transform: scale(0, 1);
-    -webkit-transform: scale(0, 1);
-    transform: scale(0, 1);
-    -moz-transform-origin: 0 0;
-    -ms-transform-origin: 0 0;
-    -webkit-transform-origin: 0 0;
-    transform-origin: 0 0;
-    transition: all .7s linear;
-    margin-top: 5px;
-  }
-  .hero-text a:hover:after {
-    -moz-transform: scale(1, 1);
-    -ms-transform: scale(1, 1);
-    -webkit-transform: scale(1, 1);
-    transform: scale(1, 1);
-  }
   
   .hero-img img {
     align-items: center;
@@ -344,10 +359,36 @@ header {
   .hero-text a i {
     margin-right: 3px;
   }
+
+  .about {
+    margin-top: 5rem;
+    background-color: #0b0026;
+    height: 100%;
+    width: 100%;
+    min-height: 100vh;
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    align-items: center;
+    gap: 1rem;
+    padding: 0;
+  }
+  
+  .about-text {
+    max-width: 75ch;
+    grid-column: 3 /9;
+  }
+  
+  .about h2 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: .5em;
+  }
   
   .social {
     position: absolute;
     top: 50vh;
+    left: 50px;
     transform: translateY(-50%);
     display: flex;
     flex-direction: column;
@@ -365,14 +406,15 @@ header {
   }
   
   .scroll-down {
-    position: absolute;
-    bottom: 6%;
-    right: 3%;
+    display: block;
   }
   
   .scroll-down i {
     display: block;
     font-size: 50px;
     border-radius: 30px;
+    position: absolute;
+    bottom: 6%;
+    right: 3%;
   }
 }
