@@ -1,4 +1,5 @@
 @import url(./assets/css/fonts.css);
+
 *{
   padding: 0;
   margin: 0;
@@ -19,6 +20,38 @@ body {
   background: linear-gradient(243.59deg, #6535c3 0%, #2d0083 25%, #0b0026 75%);
 }
 
+.underline {
+  text-decoration: underline;
+}
+
+.nt-bold {
+  font-weight: 900;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+.h-auto {
+  height: auto;
+}
+
+#bg-animated {
+    min-width: 100%;
+    min-height: 100%;
+    opacity: .4;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+}
+
+#bg-animated svg {
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
 
 header {
   position: fixed;
@@ -28,8 +61,13 @@ header {
   align-items: center;
   justify-content: space-between;
   padding: 15px 3%;
+
+}
+
+header:not(.top) {
   background-color: rgb(153 102 255 / 3%);
-  backdrop-filter: blur(51px);
+  backdrop-filter: blur(50px);
+  -webkit-backdrop-filter: blur(50px);
 }
 
 
@@ -47,14 +85,20 @@ header {
 .navlist {
   position: absolute;
   right: -1000px;
-  background-color: #0b0026f4;
   width: 84vw;
   height: 100vh;
-  padding: 20px 50px;
+  padding: 20px 30px;
   align-items: end;
   top: 0;
   transition: right .5s ease-out;
-  backdrop-filter: blur(200px);
+  background-color: rgba(29, 11, 66, 0.993);
+  backdrop-filter: blur(150px);
+  
+}
+
+.navlist ul {
+  margin-top: 60px;
+  margin-right: 10px;
 }
 
 .navlist li {
@@ -129,8 +173,61 @@ main {
   position: relative;
 }
 
+#projects {
+  /* width: 100vw; */
+  min-height: 100vh;
+  background-color: #2d0083;
+  z-index: 1;
+  position: relative;
+  grid-template-columns: repeat(12, 1fr);
+  display:grid;
+  align-items: center;
+  padding: 0;
+}
+
+#projects-title {
+  grid-column: 2/12;
+  min-height: 150px;
+  outline: 1px solid red;
+}
+
+#projects-title h2 {
+  font-size: 3.1rem;
+  text-wrap: balance;
+}
+
+#projects-list {
+  grid-column: 2/12;
+  outline: 1px solid green;
+  min-height: 400px;
+}
+
+.project-list-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+#projects-list ul li {
+  margin: 30px 0;
+  font-size: 1.4em;
+  font-family: "Noto Sans";
+  font-weight: 900;
+}
+
+
+
+#projects-showcase {
+  display: none;
+}
+
+
+
+.d-none {
+  display: none;
+}
+
 .hero {
-  height: 100%;
+  min-height: 100%;
   width: 100%;
   min-height: 100vh;
   position: relative;
@@ -141,9 +238,23 @@ main {
   padding: 5% 5%;
 }
 
+#bg-animated {
+  width: 100vw;
+  height: 100vh;
+  opacity: .4;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+
 .hero-text {
-  text-align: center;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
   margin-top: 100px;
+  z-index: 1;
+  padding: 0 20px;
 }
 
 .hero-text h1 {
@@ -156,6 +267,10 @@ main {
   font-size: 18px;
   font-weight: 400;
   margin-bottom: 10px;
+  width: 100%;
+}
+.hero-text h6 {
+  text-align: left;
 }
 .hero-text p {
   font-size: 16px;
@@ -178,7 +293,8 @@ main {
 
 .hero-img img {
   align-items: center;
-  width: 400px;
+  max-width: 400px;
+  width: 100%;
 }
 
 .hero-text a i {
@@ -190,19 +306,21 @@ main {
   align-items: center;
   justify-content: center;
   margin-bottom: 20px;
+  width: 100%;
 }
 .about {
   grid-template-columns: 1fr;
   padding: 20px 50px;
+  background-color: #0b0026;
 }
 
 
 .social {
 width: 100%;
 justify-content: center;
- display: flex;
- flex-direction: row;
- margin: 0 auto;
+display: flex;
+flex-direction: row;
+margin: 0 auto;
 }
 
 .social a {
@@ -270,11 +388,14 @@ footer {
     width: unset;
     height: unset;
     padding: 0;
+    backdrop-filter: unset;
     }
 
     .navlist ul {
       display: flex;
       align-items: center;
+      margin: 0;
+
     }
     
     .navlist ul li  {
@@ -323,7 +444,8 @@ footer {
   }
   
   .hero-text {
-    grid-column: 3 / 9;
+    grid-column: 3 / 11;
+    text-align: center;
   }
   
   .hero-text h1 {
@@ -359,10 +481,37 @@ footer {
   .hero-text a i {
     margin-right: 3px;
   }
+  #projects-title {
+    grid-column: 2/8;
+  }
+
+  #projects-title h2 {
+    font-size: 4.5rem;
+  }
+
+
+  #projects-list {
+    grid-column: 2/5;
+  }
+
+  #projects-showcase {
+    grid-column: 7/12;
+    outline: 1px solid magenta;
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  #projects-showcase img {
+    max-height: 300px;
+    outline: 1px solid red;
+  }
+  
+ 
 
   .about {
-    margin-top: 5rem;
-    background-color: #0b0026;
+    /* margin-top: 5rem; */
     height: 100%;
     width: 100%;
     min-height: 100vh;
@@ -376,7 +525,11 @@ footer {
   
   .about-text {
     max-width: 75ch;
-    grid-column: 3 /9;
+    grid-column: 2/8;
+  }
+
+  .about-avatar {
+    grid-column: 8 / 12;
   }
   
   .about h2 {
@@ -387,9 +540,10 @@ footer {
   
   .social {
     position: absolute;
-    top: 50vh;
+    width: 150px;
+    top: 70vh;
     left: 50px;
-    transform: translateY(-50%);
+    transform: translateY(-70%);
     display: flex;
     flex-direction: column;
   }

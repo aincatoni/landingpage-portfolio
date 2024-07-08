@@ -13,17 +13,17 @@
   rel="stylesheet"
   />
   <!-- Roboto -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet"> -->
   <!-- Noto -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet"> -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
+  <header id="header" class="top">
     <a href="#" class="logo"><img src="./assets/img/aincatoni_iso.png" alt="">aincorca.dev</a>
 
       <input type="checkbox" name="checkbox0" id="menu-toggle">
@@ -32,36 +32,110 @@
       </label>
     <div class="navlist">
       <ul>
-        <li class="link-animation"><a href="#">Home</a></li>
+        <li class="link-animation"><a href="#project">Proyectos</a></li>
         <li class="link-animation"><a href="#about">Sobre mi</a></li>
-        <li class="link-animation"><a href="#">Portafolio</a></li>
         <li class="link-animation"><a href="#">Contacto</a></li>
+        <li class="link-animation"><a href="#">Curriculum</a></li>
       </ul>
     </div>
   </header>
 
   <main>
     <section class="hero">
+      
+
       <div class="hero-text">
-        <h5>Front end Developer</h5>
+       <!--  <h6>Hola! Soy</h6> -->
         <h1>Ain Cortés Catoni</h1>
+        <h5>Front end Developer</h5>
         <p>Me encanta desarrollar sitios funcionales <br>Y solucionar problemas con un <strong>alto enfoque en los <i>estilos</i></strong></p>
         <div class="pinned-links">
           <div class="link-animation"><a href="#" class="cv"><i class="ri-profile-fill"></i>CV</a></div>
           <div class="link-animation"><a href="#" class="trabajos"><i class="ri-computer-fill"></i>Mis Trabajos</a></div>
         </div>
       </div>
-      <div class="hero-img">
-        <img src="./assets/img/avatar.png" alt="foto ain">
+    </section>
+
+    <section class="" id="projects">
+      <div id="projects-title"><h2>Proyectos destacados</h2></div>
+      <div id="projects-list">
+        <ul>
+          <li data-project="01">
+            <a href="">
+              <div class="project-list-row">
+                <div>Proyecto #01</div>
+                <div>tag</div>
+              </div>
+            </a>
+          </li>
+          <li data-project="02">
+            <a href="">
+              <div class="project-list-row">
+                <div>Proyecto #02</div>
+                <div>tag</div>
+              </div>
+            </a>
+          </li>
+          <li data-project="03">
+            <a href="">
+              <div class="project-list-row">
+                <div>Proyecto #03</div>
+                <div>tag</div>
+              </div>
+            </a>
+          </li>
+          <li data-project="04">
+            <a href="">
+              <div class="project-list-row">
+                <div>Proyecto #04</div>
+                <div>tag</div>
+              </div>
+            </a>
+          </li>
+          
+        </ul>
+      </div>
+      <div id="projects-showcase">
+        <div id="01" class="d-none">
+          <h4>La guía del proyector</h4>
+          <div>
+            <img class="h-auto" src="/assets/img/projects/01/home.png" alt="">
+          </div>
+        </div>
+        <div class="d-none" id="02">
+          <h4>La guía del proyector</h4>
+          <div>
+            <img class="h-auto" src="/assets/img/projects/01/contraste.png" alt="">
+          </div>
+        </div>
+        <div class="d-none" id="03">
+          <h4>La guía del proyector</h4>
+          <div>
+            <img class="h-auto" src="/assets/img/projects/01/luminosidad.png" alt="">
+          </div>
+        </div>
+        <div class="d-none" id="04">
+          <h4>La guía del proyector</h4>
+          <div>
+            <img class="h-auto" src="/assets/img/projects/01/home.png" alt="">
+          </div>
+        </div>
       </div>
     </section>
 
     <section class="about" id="about">
       <div class="about-text">
         <h2 class="">Sobre mi</h2>
-        <p>💡 Estudié Diseño Gráfico y ejercí por poco más de una década, siempre me gustó mucho la web así que fue natural para mi transitar el camino hacia el desarrollo web. Hoy en día me dedico al Desarrollo Front de sitios web siempre con una mirada desde el <strong>Diseño</strong> y la <strong>Usabilidad</strong></p>
+        <p>💡 Trabajé en <strong class="underline">Diseño Gráfico</strong> por poco más de una década, siempre me gustó mucho la web así que fue natural para mi transitar el camino hacia el desarrollo web. Hoy en día me dedico al <strong class="nt-bold">Desarrollo Front-end</strong> de sitios web siempre con una mirada desde el <strong>Diseño</strong> y la <strong>Usabilidad</strong></p>
+      </div>
+      <div class="about-avatar">
+        <div class="hero-img">
+          <img src="./assets/img/avatar.png" alt="foto ain">
+        </div>  
       </div>
     </section>
+
+    
 
   </main>
 
@@ -72,13 +146,13 @@
   </div>
 
   <div class="scroll-down">
-    <a href="#"><i class="ri-arrow-down-circle-fill"></i></a>
+    <a href="#projects"><i class="ri-arrow-down-circle-fill"></i></a>
   </div>
   
-  <footer>
+  <footer id="footer">
     <p>aincatoni.com es un sitio web hecho con ❤️ por Ain Cortés Catoni</p>
   </footer>
 
-  
+  <script src="app.js"></script>
 </body>
 </html>
