@@ -68,6 +68,7 @@ header:not(.top) {
   background-color: rgb(153 102 255 / 3%);
   backdrop-filter: blur(50px);
   -webkit-backdrop-filter: blur(50px);
+  padding: 5px 3%;
 }
 
 
@@ -79,13 +80,13 @@ header:not(.top) {
 }
 
 .logo img {
-  width: 70px;
+  width: 50px;
 }
 
 .navlist {
   position: absolute;
   right: -1000px;
-  width: 84vw;
+  width: vw;
   height: 100vh;
   padding: 20px 30px;
   align-items: end;
@@ -174,44 +175,54 @@ main {
 }
 
 #projects {
-  /* width: 100vw; */
   min-height: 100vh;
   background-color: #2d0083;
   z-index: 1;
   position: relative;
-  grid-template-columns: repeat(12, 1fr);
-  display:grid;
-  align-items: center;
-  padding: 0;
+  padding: 20px 0;
 }
 
+
 #projects-title {
-  grid-column: 2/12;
-  min-height: 150px;
-  outline: 1px solid red;
+  width: 100%;
+  padding: 0 40px;
 }
 
 #projects-title h2 {
-  font-size: 3.1rem;
+  font-size: 2.3rem;
   text-wrap: balance;
 }
 
+.projects-inner {
+  grid-template-columns: repeat(12, 1fr);
+  display:grid;
+  align-items: center;
+  margin-top: 10px;
+  padding: 20px;
+  place-content: center;
+}
+
 #projects-list {
-  grid-column: 2/12;
-  outline: 1px solid green;
-  min-height: 400px;
+  grid-column: 1/13;
+  /* min-height: 400px; */
+  padding: 0 20px;
 }
 
 .project-list-row {
   display: flex;
   justify-content: space-between;
 }
-
+#projects-list ul li:first-child {
+  border-top: 1px solid white;
+}
 #projects-list ul li {
-  margin: 30px 0;
-  font-size: 1.4em;
   font-family: "Noto Sans";
   font-weight: 900;
+  border-bottom: 1px solid white;
+}
+
+.project-list-row {
+  padding: 20px 0;
 }
 
 
@@ -262,6 +273,7 @@ main {
   font-weight: 900;
   line-height: 1em;
   margin-bottom: 25px;
+  width: 100%;
 }
 .hero-text h5 {
   font-size: 18px;
@@ -276,6 +288,7 @@ main {
   font-size: 16px;
   margin-bottom: 40px;
   line-height: 1.5em;
+  width: 100%;
 }
 .hero-text a {
   display: inline-block;
@@ -304,7 +317,7 @@ main {
 .pinned-links{
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: start;
   margin-bottom: 20px;
   width: 100%;
 }
@@ -481,31 +494,39 @@ footer {
   .hero-text a i {
     margin-right: 3px;
   }
+
+  .pinned-links{
+    justify-content: center;
+  }
+
   #projects-title {
-    grid-column: 2/8;
+  padding: 0 150px;
   }
 
   #projects-title h2 {
-    font-size: 4.5rem;
+    font-size: 2.5rem;
   }
 
 
   #projects-list {
     grid-column: 2/5;
+    min-height: 450px;
   }
 
   #projects-showcase {
-    grid-column: 7/12;
-    outline: 1px solid magenta;
-    min-height: 400px;
+    grid-column: 5/12;
+    min-height: 450px;
     display: flex;
-    align-items: center;
+    align-items: start;
     justify-content: center;
   }
   
   #projects-showcase img {
-    max-height: 300px;
-    outline: 1px solid red;
+    max-height: 350px;
+    width: 900px;
+    max-width: 100%;
+    object-fit: cover;
+    object-position: top;
   }
   
  

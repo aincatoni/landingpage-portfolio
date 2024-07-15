@@ -9,12 +9,28 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
+  const navbarHeight = document.querySelector("#header").offsetHeight;
+
+  document.querySelectorAll('.navlist a').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      e.preventDefault();
+      const targetId = this.getAttribute('href').substring(1);
+      const targetSection = document.getElementById(targetId);
+      const targetPosition = targetSection.offsetTop - navbarHeight;
+
+      window.scrollTo({
+        top: targetPosition,
+        behavior: 'smooth'
+      });
+    });
+  });
+
   
     const projectListItems = document.querySelectorAll('#projects-list li');
     const projects = document.querySelectorAll('#projects-showcase > div');
 
     projectListItems.forEach(item => {
-        item.addEventListener('click', function() {
+        item.addEventListener('mouseover', function() {
             const projectId = this.getAttribute('data-project');
 
             projects.forEach(project => {
@@ -25,10 +41,15 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
             });
         });
+
+        item.addEventListener('mouseleave', function() {
+          projects.forEach(project => {
+              project.classList.add('d-none');
+          });
+      });
+
+        
     });
-
-
-
 
   
 });
